@@ -1,0 +1,89 @@
+# Gateway Platform Configuration Templates
+# Copy relevant blocks into your ~/.hermes/config.yaml under the top-level `platforms:` key.
+# After adding, run: hermes gateway restart
+#
+# Environment variable fallbacks (set in ~/.hermes/.env or shell):
+#   WEIXIN_TOKEN / WEIXIN_ACCOUNT_ID  → weixin
+#   TELEGRAM_TOKEN                    → telegram (TELEGRAM_BOT_TOKEN also works)
+#   FEISHU_APP_ID / FEISHU_APP_SECRET → feishu
+#   DISCORD_TOKEN                     → discord
+#   SLACK_TOKEN / SLACK_SIGNING_SECRET → slack
+
+# ───────────────────────────────────────────────────────────
+# WeChat / Weixin (iLink Bot API)
+# ───────────────────────────────────────────────────────────
+# Token format: {account_id}:{hex_token}
+# Find these in ~/.hermes/weixin/accounts/{account_id}.json
+weixin:
+  enabled: true
+  token: e81004a40e7e@im.bot:06000085c34f20ad9c8deb0dd2ca04bfc32837
+  extra:
+    account_id: e81004a40e7e@im.bot
+    base_url: https://ilinkai.weixin.qq.com
+    # Optional: allowlist users (comma-separated WeChat user IDs)
+    # allow_from: "user1@im.wechat,user2@im.wechat"
+    # dm_policy: open          # open|approval|disabled
+    # group_policy: disabled   # disabled|approval|open
+
+# ───────────────────────────────────────────────────────────
+# Telegram
+# ───────────────────────────────────────────────────────────
+telegram:
+  enabled: true
+  token: "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11"
+  extra:
+    # Allowlist users by Telegram user ID (integer)
+    allow_from: "7799184011"
+    # Optional:
+    # dm_policy: open
+    # group_policy: disabled
+    # disable_link_previews: false
+
+# ───────────────────────────────────────────────────────────
+# Feishu / Lark
+# ───────────────────────────────────────────────────────────
+feishu:
+  enabled: true
+  token: "cli_xxxxxxxxxxxxxx"          # Feishu App ID (starts with cli_)
+  extra:
+    app_id: "cli_xxxxxxxxxxxxxx"       # Must match token — adapter reads extra.app_id or FEISHU_APP_ID env var
+    app_secret: "your_app_secret_here"  # Feishu App Secret
+    # Optional:
+    # allow_from: "open_id_1,open_id_2"
+
+# ───────────────────────────────────────────────────────────
+# Discord
+# ───────────────────────────────────────────────────────────
+discord:
+  enabled: true
+  token: "your_bot_token_here"
+  extra:
+    # require_mention: true
+    # allow_from: "user_id_1,user_id_2"
+    # free_response_channels: "channel_id_1"
+    # auto_thread: true
+    # reactions: true
+
+# ───────────────────────────────────────────────────────────
+# Slack
+# ───────────────────────────────────────────────────────────
+slack:
+  enabled: true
+  token: "xoxb-your-bot-token"
+  extra:
+    # signing_secret: "your_signing_secret"
+    # allow_from: "user_id_1,user_id_2"
+
+# ───────────────────────────────────────────────────────────
+# Email (IMAP/SMTP)
+# ───────────────────────────────────────────────────────────
+email:
+  enabled: true
+  token: "your_smtp_password"
+  extra:
+    # imap_server: imap.gmail.com
+    # imap_port: 993
+    # smtp_server: smtp.gmail.com
+    # smtp_port: 587
+    # email_address: you@gmail.com
+    # allow_from: "friend@example.com"
