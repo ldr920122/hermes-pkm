@@ -1,207 +1,163 @@
 <div align="center">
 
-# 🧠 药师的第二大脑
+# 药师的第二大脑
 
-### 基于 Obsidian + Hermes Agent 的个人知识管理系统
+**智能体 + Obsidian 的个人知识管理方法**
 
-**让AI成为你的药学知识助手，而不是替代你的思考**
+「知识库不是资料仓库，而是智能体的长期工作记忆。」
 
-[![GitHub stars](https://img.shields.io/github/stars/ldr920122/hermes-pkm?style=social)](https://github.com/ldr920122/hermes-pkm)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Made for Pharmacists](https://img.shields.io/badge/Made%20for-Pharmacists-7C3AED.svg)](https://github.com/ldr920122/hermes-pkm)
+[这是什么](#这是什么) · [我怎么用的](#我怎么用的) · [安装](#安装) · [Skills](#skills) · [关于我](#关于我)
 
 </div>
 
 ---
 
-## 💡 这是什么？
+让 AI 不是"替你想"，而是能持续读写你的笔记、记住你的上下文、帮你把日常学习和工作沉淀下来。
 
-一个**药房药师**搭建的AI增强知识管理系统。核心思路：
+你今天丢进去的东西，明天智能体还能继续用——这就是长期记忆和普通聊天的区别。
 
-> **Obsidian 管记忆，Hermes Agent 管行动，AI 管思考。**
+## 这是什么
 
-不用写代码，不用懂技术。就像给你的大脑装了一个「搜索 + 整理 + 执行」的外挂。
+一套在真实学习、科研、写作和日常管理中跑通的 AI 增强知识管理方法。
+
+**Obsidian 管长期记忆，AI 智能体管收集、整理、提醒和调用。**
 
 ```
-┌─────────────────────────────────────────────────┐
-│                  你的大脑 🧠                      │
-│         想法 / 经验 / 灵感 / 问题                  │
-└────────────────────┬────────────────────────────┘
-                     │
-        ┌────────────▼────────────┐
-        │      Obsidian 📓        │
-        │   双向链接 · 知识图谱    │
-        │   存储 · 检索 · 关联     │
-        └────────────┬────────────┘
-                     │
-        ┌────────────▼────────────┐
-        │   Hermes Agent 🤖       │
-        │   AI对话 · 自动化流程    │
-        │   多平台 · 持久记忆      │
-        └────────────┬────────────┘
-                     │
-    ┌────────────────┼────────────────┐
-    │                │                │
-┌───▼───┐     ┌─────▼─────┐    ┌────▼────┐
-│ 微信 💬│     │ Telegram 📱│    │ 飞书 📨 │
-│随手问AI│     │ 深度对话   │    │ 团队协作│
-└────────┘     └───────────┘    └─────────┘
+你（提问 / 丢资料 / 写想法）
+  → 智能体（Claude Code / Hermes / Codex）  ← → LLM API（DeepSeek / Claude / GPT）
+    → Obsidian Vault（raw/ 原始资料 · wiki/ 结构化知识 · 子弹笔记/）
+      → 下一次写作、讲课、科研时被智能体再次检索和调用
 ```
+
+不是一个新的笔记软件，也不是提示词集合。核心是把本地 Obsidian Vault 变成智能体可以长期读写的工作记忆。
 
 ---
 
-## 🚀 5分钟上手
+## 我怎么用的
 
-### 第一步：安装 Hermes Agent
+### 资料怎么存进来
 
-```bash
-# macOS / Linux
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+文章、论文、网页、视频笔记、会议纪要、自己的想法——先放进 Obsidian。不是所有资料都会变成知识，判断标准很简单：**这条内容下个月我还能不能复用？**
 
-# 初始化
-hermes setup
+临时信息留在 `raw/` 或收集箱。能反复用于论文、讲课、工作、项目判断的，让智能体整理成结构化 wiki：
+
+> 一篇文章 → 智能体判断是否值得沉淀 → 拆成原则、方法、案例、工具、洞察 → 写入 wiki/
+
+### 子弹笔记日常
+
+我用 Obsidian 做日常任务和复盘，智能体负责提醒和整理：
+
+| 时间 | 智能体做什么 |
+|------|------------|
+| **早 8:00** | 读取项目、收集箱和日记，推送今天最应该推进的事 |
+| **白天不定时** | 从知识库里抽取旧笔记，生成复习卡片，避免知识只被收藏不被使用 |
+| **晚 9:00** | 提醒安排 30 分钟学习，把学到的内容归档到 Obsidian |
+
+重点不是把计划写得漂亮，而是让它和智能体形成闭环：**收集箱 → 今日任务 → 日记记录 → 每周复盘 → 重新沉淀成知识**。
+
+### 知识库（LLM Wiki）
+
+可复用内容整理成本地 wiki。它和普通资料库的区别：
+
+| | 资料库 | 知识库 |
+|---|------|------|
+| 存什么 | 什么都存 | 只沉淀可复用内容 |
+| 谁来用 | 主要给人翻 | 主要给智能体调用 |
+| 时间久了 | 越堆越乱 | 定期复盘和更新 |
+| 怎么存 | 原文照搬 | 拆成原则、方法、案例、反模式 |
+
+写论文时让智能体从知识库找综述材料；做 PPT 时基于已有笔记生成大纲；每周复盘时让智能体告诉我哪些资料值得升级成知识。
+
+**收集 → 整理 → 调用 → 复盘 → 再沉淀。** 这是整个系统的核心循环。
+
+---
+
+## 安装
+
+你需要两个东西：**Obsidian**（本地知识库）+ **一个能读写本地文件的 AI 智能体**。
+
+### 1. 安装 Obsidian
+
+从 [obsidian.md](https://obsidian.md) 下载，创建一个 Vault。建议先从最简单的目录开始：
+
+```
+你的 Vault/
+├── raw/          ← 原始资料
+├── wiki/         ← 结构化知识
+└── 子弹笔记/      ← 日记、待办、复盘
 ```
 
-> 💡 详细安装文档：[hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs)
+### 2. 安装一个智能体（三选一）
 
-### 第二步：安装 Obsidian
+| 工具 | 一句话 | 安装 |
+|------|-------|------|
+| **Claude Code** | 最省心，读写本地文件、写文档、改代码 | [claude.ai/download](https://claude.ai/download) |
+| **Hermes Agent** | 多平台入口、定时任务、长期自动化 | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash` |
+| **OpenAI Codex** | 在代码仓库和本地文件里协作 | [openai.com/codex](https://openai.com/codex) |
 
-从 [obsidian.md](https://obsidian.md) 下载，创建一个 Vault（知识库）。
+刚开始？装 **Obsidian + Claude Code** 就够了。
 
-### 第三步：添加本仓库的 Skills
+### 3. 使用本仓库的 Skills
 
 ```bash
-# 克隆本仓库
 git clone https://github.com/ldr920122/hermes-pkm.git
-
-# 安装 skills（每个子目录就是一个 skill）
-cd hermes-pkm/skills
-for skill in */; do
-  hermes skill install "$skill"
-done
 ```
 
-### 第四步：开始使用
+- **Claude Code / Codex 用户**：把 `skills/` 目录里的 `SKILL.md` 当作工作流说明，复制到你的项目中使用。
+- **Hermes 用户**：`hermes skills install` 安装需要的 skill。
+- **建议**：先把「Obsidian + 智能体能读写笔记」这个最小闭环跑通，不要一次装完所有 skill。
+
+---
+
+## Skills
+
+先看这几个就够了：
+
+| Skill | 做什么 |
+|-------|-------|
+| [obsidian](skills/obsidian/) | 读写 Obsidian 笔记——搜索、创建、追加、管理 Vault 结构 |
+| [llm-wiki](skills/llm-wiki/) | 把资料整理成结构化知识库，生成可被智能体调用的 wiki 页面 |
+| [hermes-agent](skills/hermes-agent/) | Hermes 配置、多平台入口、定时任务、自动化工作流 |
+| [academic-writing](skills/academic-writing/) | 中文学术写作——论文、课题申报、基金申请 |
+| [ai-productivity-workflow](skills/ai-productivity-workflow/) | 研究 → 计划 → 执行 → 复盘的完整工作流 |
+
+更多 skills（PPT 生成、arXiv 搜索、微信读书、Markdown/HTML 转换等）见 [`skills/`](skills/) 目录。
+
+---
+
+## 装好以后可以这样问
+
+不要只问「帮我总结」。让智能体参与你的知识循环：
 
 ```
-你：帮我整理一下卡瑞利珠单抗的不良反应
-Hermes：正在搜索文献... 已整理为结构化笔记，保存到 Obsidian
+把这篇文章放进我的 Obsidian，判断它下个月还能不能复用。
+帮我从最近一周的日记里整理出可以沉淀进 wiki 的知识。
+基于我的知识库，帮我生成一个 10 分钟讲课大纲。
+每天早上 8 点提醒我今天最重要的 3 件事。
 ```
 
 ---
 
-## 📚 Skills 分类
+## 适合谁
 
-### 🎓 学术与科研
-
-| Skill | 功能 | 药师场景 |
-|-------|------|----------|
-| **[academic-writing](skills/academic-writing/)** | 中文学术写作助手 | 论文撰写、课题申报、基金申请 |
-| **[arxiv](skills/arxiv/)** | 学术论文搜索 | 追踪药物研发前沿 |
-| **[llm-wiki](skills/llm-wiki/)** | AI知识库构建 | 自动整理文献为结构化wiki |
-| **[obsidian](skills/obsidian/)** | Obsidian笔记管理 | 创建、搜索、管理知识库 |
-| **[obsidian-dashboard-design](skills/obsidian-dashboard-design/)** | 工作台设计 | 个性化首页、项目看板 |
-
-### 💊 药学专业
-
-| Skill | 功能 | 药师场景 |
-|-------|------|----------|
-| **[carl-weread](skills/carl-weread/)** | 微信读书教练 | 阅读药学书籍→行动卡片 |
-| **[learning-fable-writer](skills/learning-fable-writer/)** | 学习寓言创作 | 用故事理解复杂概念 |
-
-### 🤖 AI 效率工具
-
-| Skill | 功能 | 药师场景 |
-|-------|------|----------|
-| **[hermes-agent](skills/hermes-agent/)** | AI助手配置 | 多平台对话、自动化工作流 |
-| **[ai-productivity-workflow](skills/ai-productivity-workflow/)** | AI增强工作流 | 研究→计划→执行 |
-| **[fat-loss-coach](skills/fat-loss-coach/)** | 赛博健身搭子 | 值班夜班的健康管理 |
-| **[huashu-md-html](skills/huashu-md-html/)** | 文档格式转换 | 论文/报告互相转换 |
-
-### 🎯 职场技能
-
-| Skill | 功能 | 药师场景 |
-|-------|------|----------|
-| **[powerpoint](skills/powerpoint/)** | PPT自动生成 | 教学查房、科室汇报 |
-| **[humanize-ppt](skills/humanize-ppt/)** | 人性化PPT设计 | 让AI做的PPT不再像AI |
-| **[x-article-publisher](skills/x-article-publisher/)** | X/Twitter发布 | 药学科普、个人品牌 |
+想把 Obsidian 从「笔记仓库」变成「AI 工作记忆」的人。药师、研究生、老师、学生、内容创作者都可以参考。如果你还没用过 Obsidian，也可以先把它当成「本地知识库 + AI 助手」的入门示例。
 
 ---
 
-## 🏗️ 系统架构
+## 关于我
 
-```
-你的手机/电脑
-    │
-    ├── Obsidian（知识库）
-    │   ├── 📂 wiki/          ← 结构化知识
-    │   ├── 📂 raw/           ← 原始素材
-    │   ├── 📂 子弹笔记/      ← 日记 + 待办
-    │   └── 📊 一页纸工作台.md  ← 仪表盘
-    │
-    ├── Hermes Agent（AI层）
-    │   ├── 💬 微信/Telegram/飞书  ← 多平台入口
-    │   ├── 🧠 持久记忆           ← 跨会话记住你
-    │   ├── ⚡ Skills             ← 可复用的工作流
-    │   └── ⏰ Cron Jobs         ← 定时自动化
-    │
-    └── 云端 API
-        ├── DeepSeek / Claude   ← AI推理引擎
-        └── 各种工具API         ← 扩展能力
-```
+**刘冬瑞** · 泰州市人民医院药师 / 扬州大学药学硕士 / 东华理工大学 CS 在读
+
+白天在药房发药，晚上学代码。这套系统不是坐在书桌前设计出来的，是在值班、写论文、备课、做项目、每天被琐事打断的生活里一点点长出来的。
+
+> 药师不只是发药的，我们也是药物信息的管理者。用好 AI，才能更好地服务患者。
 
 ---
 
-## 📖 真实使用场景
-
-### 场景 1：文献整理
-
-```
-你（微信发消息）：这篇文献帮我整理一下，保存到知识库
-    ↓
-Hermes：抓取网页 → 提取核心信息 → 生成结构化笔记 → 保存到 Obsidian
-    ↓
-你的 Obsidian 里多了一篇带标签、双向链接的笔记
-```
-
-### 场景 2：值班夜班
-
-```
-你：今晚夜班，帮我列一下注意事项
-    ↓
-Hermes：基于你的历史笔记 → 整理值班清单 → 发到微信
-```
-
-### 场景 3：论文写作
-
-```
-你：帮我写一段卡瑞利珠单抗心脏毒性的文献综述
-    ↓
-Hermes：搜索 arXiv/文献库 → 整理关键发现 → 生成结构化综述 → 保存到 Obsidian
-```
-
----
-
-## 🎤 关于我
-
-**刘冬瑞** — 泰州市人民医院药师 / 扬州大学药学硕士 / 东华理工大学CS在读
-
-一个白天在药房发药、晚上在学代码的普通药师。用这个系统管理自己的知识、论文、项目和生活。
-
-> *"药师不只是发药的，我们是药物信息的管理者。用好AI，才能更好地服务患者。"*
-
----
-
-## 📄 License
-
-MIT License — 随便用，改，分享。
-
----
+MIT License — 随便用、改、分享。
 
 <div align="center">
 
-**觉得有用？给个 ⭐ Star 鼓励一下！**
-
-*Built with ❤️ by a pharmacist who codes*
+如果这个方法对你有启发，欢迎 Star。
 
 </div>
