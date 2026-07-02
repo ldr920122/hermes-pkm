@@ -120,6 +120,7 @@ git clone https://github.com/ldr920122/hermes-pkm.git
 | [hermes-agent](skills/hermes-agent/) | Hermes 配置、多平台入口、定时任务、自动化工作流 |
 | [academic-writing](skills/academic-writing/) | 中文学术写作——论文、课题申报、基金申请 |
 | [ai-productivity-workflow](skills/ai-productivity-workflow/) | 研究 → 计划 → 执行 → 复盘的完整工作流 |
+| [hermes-tweet](skills/hermes-tweet/) | X/Twitter 读取、监控、用户查询和需确认的社交动作流程 |
 
 更多 skills（PPT 大纲、arXiv 搜索、微信读书、Markdown/HTML 转换等）见 [`skills/`](skills/) 目录。
 
