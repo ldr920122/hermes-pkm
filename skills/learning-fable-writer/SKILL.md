@@ -35,7 +35,7 @@ category: note-taking
 
 ### 1. 检查已有故事（必做）
 ```bash
-ls /Users/wbaoc/Documents/Obsidian/wbaoc-wiki/wiki/学习方法的寓言小故事/{学科}/
+ls <VAULT_PATH>/wiki/学习方法的寓言小故事/{学科}/
 ```
 读取已有概念列表，避免重复选题。
 
@@ -95,7 +95,7 @@ created: {YYYY-MM-DD}
 
 ### 6. 保存路径
 ```
-/Users/wbaoc/Documents/Obsidian/wbaoc-wiki/wiki/学习方法的寓言小故事/{学科}/{概念名}/{概念名}.md
+<VAULT_PATH>/wiki/学习方法的寓言小故事/{学科}/{概念名}/{概念名}.md
 ```
 
 ## 概念选题参考

@@ -12,7 +12,7 @@ import random
 from pathlib import Path
 from datetime import datetime
 
-VAULT = Path("/Users/wbaoc/Documents/Obsidian/wbaoc-wiki")
+VAULT = Path(os.environ.get("OBSIDIAN_VAULT_PATH", str(Path.home() / "Documents" / "Obsidian")))
 HISTORY_FILE = Path.home() / ".hermes" / "scripts" / ".review_history.json"
 
 # 可复习的目录（排除日记、模板、系统文件）

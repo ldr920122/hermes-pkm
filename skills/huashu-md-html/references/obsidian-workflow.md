@@ -4,7 +4,7 @@
 
 ## 用户背景
 
-用户使用 Obsidian (`wbaoc-wiki`) 作为个人知识库，结构：
+用户使用 Obsidian (`<vault-name>`) 作为个人知识库，结构：
 - `raw/` — 原始剪藏素材（网页、PDF、视频字幕等）
 - `wiki/` — LLM 提炼的结构化知识页（带 YAML frontmatter）
 - `子弹笔记/` — BuJo 系统（日记、项目、工作台）
@@ -15,7 +15,7 @@
 
 ### 源文件位置
 ```
-/Users/wbaoc/Documents/Obsidian/wbaoc-wiki/wiki/
+<VAULT_PATH>/wiki/
 ```
 
 ### 转换命令

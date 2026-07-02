@@ -13,7 +13,7 @@ Create a launch script (`启动工作台.sh`) in vault root:
 ```bash
 #!/bin/bash
 PORT=8088
-VAULT_DIR="/Users/wbaoc/Documents/Obsidian/wbaoc-wiki"
+VAULT_DIR="<VAULT_PATH>"
 cd "$VAULT_DIR"
 python3 -m http.server "$PORT" &>/dev/null &
 sleep 1
@@ -34,7 +34,7 @@ User double-clicks this script → browser opens `http://localhost:8088/工作�
 If user opens HTML directly via `file://` (no server), `obsidian://` links will NOT work. The only fallback is clipboard copy:
 
 ```html
-<a href="obsidian://open?vault=wbaoc-wiki&file=PATH" 
+<a href="obsidian://open?vault=<vault-name>&file=PATH" 
    class="quick-link" 
    data-path="PATH">
     <span class="quick-link-label">LABEL</span>

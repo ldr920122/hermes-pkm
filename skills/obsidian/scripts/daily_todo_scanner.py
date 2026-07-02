@@ -18,7 +18,7 @@ import re
 from datetime import datetime
 
 # === CONFIGURE THESE PATHS ===
-WIKI_ROOT = "/Users/wbaoc/Documents/Obsidian/wbaoc-wiki"
+WIKI_ROOT = os.environ.get("OBSIDIAN_VAULT_PATH", os.path.expanduser("~/Documents/Obsidian"))
 DAILY_DIR = os.path.join(WIKI_ROOT, "子弹笔记", "日记")
 PROJECT_DIR = os.path.join(WIKI_ROOT, "子弹笔记", "项目")
 COLLECTION_FILE = os.path.join(WIKI_ROOT, "子弹笔记", "收集箱.md")

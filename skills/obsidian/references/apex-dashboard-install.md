@@ -11,14 +11,14 @@
 cd ~/Downloads && git clone https://github.com/PandoraReads/apex-dashboard.git
 
 # 2. Created plugin directory
-mkdir -p ~/Documents/Obsidian/wbaoc-wiki/.obsidian/plugins/apex-dashboard
+mkdir -p <VAULT_PATH>/.obsidian/plugins/apex-dashboard
 
 # 3. Copied files
 cp ~/Downloads/apex-dashboard/main.js \
     ~/Downloads/apex-dashboard/manifest.json \
     ~/Downloads/apex-dashboard/styles.css \
     ~/Downloads/apex-dashboard/package.json \
-    ~/Documents/Obsidian/wbaoc-wiki/.obsidian/plugins/apex-dashboard/
+    <VAULT_PATH>/.obsidian/plugins/apex-dashboard/
 
 # 4. Added to community-plugins.json
 # Added "apex-dashboard" to the array

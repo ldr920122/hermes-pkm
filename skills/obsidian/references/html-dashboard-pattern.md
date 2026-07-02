@@ -117,7 +117,7 @@ For quick links that open files directly in Obsidian:
 
 Example:
 ```html
-<a href="obsidian://open?vault=wbaoc-wiki&file=子弹笔记/日记/2026-05-23_Sat.md">
+<a href="obsidian://open?vault=<vault-name>&file=子弹笔记/日记/2026-05-23_Sat.md">
   📝 今日日记
 </a>
 ```
@@ -213,7 +213,7 @@ tags: [首页, 工作台, 仪表盘]
 
 ## Example File Locations
 
-- Full HTML dashboard: `~/Documents/Obsidian/wbaoc-wiki/工作台.html`
-- Entry page: `~/Documents/Obsidian/wbaoc-wiki/首页.md`
-- Backup: `~/Documents/Obsidian/wbaoc-wiki/attachments/dashboard.html`
-- Usage guide: `~/Documents/Obsidian/wbaoc-wiki/attachments/README-dashboard.md`
+- Full HTML dashboard: `<VAULT_PATH>/工作台.html`
+- Entry page: `<VAULT_PATH>/首页.md`
+- Backup: `<VAULT_PATH>/attachments/dashboard.html`
+- Usage guide: `<VAULT_PATH>/attachments/README-dashboard.md`

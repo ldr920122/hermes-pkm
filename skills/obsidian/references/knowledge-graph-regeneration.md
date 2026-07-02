@@ -5,7 +5,7 @@ The knowledge graph (`wiki/knowledge-graph.html`) displays relationships between
 
 ## Regeneration Command
 ```bash
-bash ~/.hermes/skills/llm-wiki/scripts/build-graph-data.sh ~/Documents/Obsidian/wbaoc-wiki
+bash ~/.hermes/skills/llm-wiki/scripts/build-graph-data.sh <VAULT_PATH>
 ```
 
 ## Output
@@ -28,7 +28,7 @@ The script generates `wiki/graph-data.json` with:
 After regeneration, check:
 ```bash
 # View graph metadata
-cat ~/Documents/Obsidian/wbaoc-wiki/wiki/graph-data.json | jq '.meta'
+cat <VAULT_PATH>/wiki/graph-data.json | jq '.meta'
 
 # Should show:
 # - build_date: recent timestamp

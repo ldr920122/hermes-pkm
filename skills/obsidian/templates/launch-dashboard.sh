@@ -7,7 +7,7 @@
 # 通过 localhost HTTP 服务后，obsidian:// 链接才能正常跳转。
 
 PORT=8088
-VAULT_DIR="/Users/wbaoc/Documents/Obsidian/wbaoc-wiki"
+VAULT_DIR="${OBSIDIAN_VAULT_PATH:-$HOME/Documents/Obsidian}"
 
 # 启动HTTP服务器（后台）
 cd "$VAULT_DIR"

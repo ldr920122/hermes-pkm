@@ -10,14 +10,14 @@ The plan lives at `wiki/{Topic}学习计划.md` inside the Obsidian vault. The c
 1. Check memory for saved vault path
 2. Probe known locations:
    ```bash
-   ls "$HOME/Documents/obsidian/wbaoc-wiki/wiki/"*学习计划* 2>/dev/null
+   ls "<VAULT_PATH>/wiki/"*学习计划* 2>/dev/null
    ```
 3. Fallback search (slow):
    ```bash
    find "$HOME/Documents" -name "*学习计划*" -path "*/wiki/*" 2>/dev/null | head -5
    ```
 
-**Pitfall**: The `obsidian` skill says vault path is `OBSIDIAN_VAULT_PATH` env var, but on cron servers this is often unset. The actual path is typically `/Users/wbaoc/Documents/obsidian/wbaoc-wiki/`.
+**Pitfall**: The `obsidian` skill says vault path is `OBSIDIAN_VAULT_PATH` env var, but on cron servers this is often unset. The actual path is typically `<VAULT_PATH>/`.
 
 ## 2. Read and parse the plan
 

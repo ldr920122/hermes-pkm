@@ -2,7 +2,7 @@
 
 ## User's Vault Structure
 ```
-wbaoc-wiki/
+<vault-name>/
 ├── 00 templates/       # Templates
 ├── attachments/        # Images and attachments
 ├── raw/                # Raw materials (read-only)

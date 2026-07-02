@@ -204,8 +204,6 @@ When adding content to existing daily notes (e.g., adding events, thoughts, or s
 - 📝 笔记·事件·感想 section for freeform capture throughout the day
 - 🔄 明日预览 section (30-second bedtime ritual)
 
-**Fitness & carb cycling analysis**: when user asks "低碳还是高碳" / "今天能吃什么" / "看看最近饮食", read the last week of daily notes and analyze diet + training patterns. Diaries contain Gemini-generated nutrition logs with `🍽️ 今日饮食记录` / `🏋️ 今日训练记录` / `📊 状态评估` sections, including a user-authored `明日行动指南` that should be prioritized. See `references/bujo-fitness-carb-analysis.md` for the full pattern: timeline table, carb budget calculation, and macro recommendations. Also load `fat-loss-coach` skill for MOBA-style tactical language and persona when responding.
-
 **Monthly template** (see `templates/bujo-monthly-template.md`):
 - Calendar timeline table (31 rows, one notable thing per day)
 - Monthly action plan checklist
@@ -366,9 +364,9 @@ When the user shares meeting notes from external AI tools (Yuanbao 元宝, Tence
 
 "子弹笔记", "BuJo", "bullet journal", "年度计划", "月度计划", "daily planning", "任务管理", "习惯追踪", "P人", "ADHD 效率", "GTD alternative", "want to plan/organize/manage tasks with Obsidian", "副业", "职业规划", "career change", "side hustle"
 
-### Minimalist Organization (wbaoc-specific)
+### Minimalist Organization
 
-When organizing files for this user, follow the minimalist principles in `references/minimalist-organization-wbaoc.md`. Key rules: one entry page + one file directory, avoid duplicate directories, prefer flat structure. User corrected agent for creating messy duplicate structure.
+When organizing files, follow minimalist principles: one entry page + one file directory, avoid duplicate directories, prefer flat structure. Don't create parallel folder trees for content that already has a canonical location.
 
 **When the user wants diaries under `子弹笔记/`**: move them. The user's preference is for a single BuJo root with diaries as a subfolder (`子弹笔记/日记/`), not a separate `01 日记/` folder at vault root. When relocating: (1) `mv` all diary files into `子弹笔记/日记/`, (2) update `.obsidian/daily-notes.json` folder field, (3) update all Dataview queries in 仪表盘.md, (4) `rmdir` the old folder. Don't leave stale directories — they create confusion when Calendar generates to the old path.
 
@@ -425,7 +423,7 @@ When user reports Obsidian sync issues (Fast Note Sync, Obsidian Sync, or other)
 
 The user uses Obsidian Web Clipper browser extension to capture web content. Common pitfalls:
 
-- **Vault misconfiguration**: Web Clipper's vault setting must be `wbaoc-wiki` (the vault name), NOT `raw/AI` (that's a folder path, not a vault). If the vault is set to a path, Obsidian errors with "Unable to find a vault."
+- **Vault misconfiguration**: Web Clipper's vault setting must be `<vault-name>` (the vault name), NOT `raw/AI` (that's a folder path, not a vault). If the vault is set to a path, Obsidian errors with "Unable to find a vault."
 - **Folder path casing**: Default folder should be `raw/AI` (or other topic folder). raw/ is organized by topic, not by source.
 - **YouTube limitation**: Web Clipper captures page metadata and structure, NOT video subtitles/transcripts. For YouTube transcripts, use Hermes's `youtube-content` skill instead, saving to `raw/AI/` or `raw/通用/`.
 
@@ -555,11 +553,9 @@ When user wants an all-in-one dashboard that shows everything on open:
    - **IMPORTANT**: Create `启动工作台.sh` launch script (local HTTP server) so `obsidian://` deep links work. `file://` protocol blocks custom protocols. Template at `templates/launch-dashboard.sh`. See `references/html-dashboard-obsidian-protocol-fix.md`.
    - **Content updates**: HTML dashboard is static — all sections (今日焦点, 读书, 播客, 知识库动态) must be manually updated in the HTML file. Dataview does NOT work in standalone HTML.
 
-4. **User style preference**: User corrected agent for creating "太素了" (too plain) dashboard that looked like bullet journal template. They want **HTML style, beautiful design**. Don't use plain Markdown for dashboards — create HTML with modern aesthetics. See `references/dashboard-design-preferences-wbaoc.md` for detailed preferences and the Apex Dashboard plugin recommendation.
+4. **Style**: don't use plain Markdown for dashboards — create HTML with modern aesthetics. Avoid generic AI-flavored design ("AI味"); aim for a humanistic, crafted feel. One ready-made option: the [Apex Dashboard](https://github.com/PandoraReads/apex-dashboard) plugin — 11 curated themes with warm options like 大地 (parchment) and 春日 (rose).
 
-   **"AI味" vs "人文味"**: User explicitly said my work had "AI味太重" (too AI-flavored). They want design that feels humanistic and crafted, not generic AI output. **Recommended solution**: install [Apex Dashboard](https://github.com/PandoraReads/apex-dashboard) plugin — 11 curated themes with warm options like 大地 (parchment) and 春日 (rose).
-
-   **File placement**: User wants dashboard in root directory ("根目录下第一页"), not buried in subdirectories. "既然叫一页纸工作台的话."
+   **File placement**: put the dashboard in the vault root directory as the first page, not buried in subdirectories.
 
    See `references/html-dashboard-pattern.md` for full HTML template and setup instructions.
 

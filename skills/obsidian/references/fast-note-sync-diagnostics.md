@@ -134,7 +134,7 @@ grep -oP '"(api|apiToken|vault|serverUrl|remoteUrl|token)"' "$VAULT/.obsidian/pl
 ```json
   "api": "http://localhost:9000",
   "apiToken": "<JWT token>",
-  "vault": "wbaoc-wiki"
+  "vault": "<vault-name>"
 ```
 
 可以用 `patch` 工具追加到最后一个字段后面（在 closing `}` 前加逗号）。

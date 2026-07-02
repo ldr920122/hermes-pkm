@@ -8,7 +8,7 @@
 # Excludes: index.md, log.md, overview.md, README.md, entities/, sources/, topics/
 # Skips: files < 200 bytes, already-up-to-date HTML files
 
-WIKI_DIR="${1:-/Users/wbaoc/Documents/Obsidian/wbaoc-wiki/wiki}"
+WIKI_DIR="${1:-${OBSIDIAN_VAULT_PATH:-$HOME/Documents/Obsidian}/wiki}"
 THEME="${2:-article}"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -16,7 +16,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 if [ -f "$SCRIPT_DIR/md_to_html.py" ]; then
   SCRIPT="$SCRIPT_DIR/md_to_html.py"
 else
-  SCRIPT="/Users/wbaoc/.hermes/skills/huashu-md-html/scripts/md_to_html.py"
+  SCRIPT="$HOME/.hermes/skills/huashu-md-html/scripts/md_to_html.py"
 fi
 
 SUCCESS=0

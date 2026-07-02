@@ -2,7 +2,7 @@
 
 User's vault follows CLAUDE.md schema: Karpathy LLM Wiki pattern with `wiki/` as structured knowledge base.
 
-**Vault location:** `~/Documents/Obsidian/wbaoc-wiki/` (not default paths)
+**Vault location:** `<VAULT_PATH>/` (not default paths)
 
 ## Full Ingest Checklist
 
@@ -11,10 +11,10 @@ When ingesting content (image, article, video notes) into the wiki:
 ### 1. Copy attachments
 ```bash
 # Images → attachments/
-cp ~/Desktop/image.png ~/Documents/Obsidian/wbaoc-wiki/attachments/
+cp ~/Desktop/image.png <VAULT_PATH>/attachments/
 
 # Articles → raw/articles/ or raw/clippings/
-cp ~/Downloads/article.md ~/Documents/Obsidian/wbaoc-wiki/raw/articles/
+cp ~/Downloads/article.md <VAULT_PATH>/raw/articles/
 ```
 
 ### 2. Create wiki page with frontmatter

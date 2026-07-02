@@ -52,7 +52,7 @@ If browser automation fails:
 
 Save to Obsidian vault:
 ```
-/Users/wbaoc/Documents/Obsidian/wbaoc-wiki/raw/clippings/Bilibili/
+<VAULT_PATH>/raw/clippings/Bilibili/
 ```
 
 ## Filename Convention

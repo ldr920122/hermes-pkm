@@ -11,7 +11,7 @@ import subprocess, sys, os
 from pathlib import Path
 
 # ====== 配置区 ======
-VAULT = os.environ.get("OBSIDIAN_VAULT_PATH", os.path.expanduser("~/Documents/obsidian/wbaoc-wiki"))
+VAULT = os.environ.get("OBSIDIAN_VAULT_PATH", os.path.expanduser("~/Documents/Obsidian"))
 OUT_DIR = f"{VAULT}/raw/clippings/your-site-name"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 TIMEOUT = 90  # 秒

@@ -25,7 +25,7 @@ Extract from the message/images:
 cp /path/to/image.jpg "$VAULT/attachments/扬大论文XXX模板.jpg"
 
 # Location B: External project directory (for standalone reference)
-cp /path/to/image.jpg "/Users/wbaoc/Documents/扬大硕士/通知文档/论文格式模板/01_XXX模板.jpg"
+cp /path/to/image.jpg "<MATERIALS_DIR>/论文格式模板/01_XXX模板.jpg"
 ```
 
 ### 3. Create project tracking note
