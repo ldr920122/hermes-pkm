@@ -83,7 +83,24 @@ print(f"日记已存在：{'是' if existing_content else '否'}")
 print(f"\n---TODO_SECTION---")
 print(todo_section)
 
-# 6. High-priority items
+# 6. Auto-update workbench transclusion link
+workbench_file = os.path.join(WIKI_ROOT, "子弹笔记", "一页纸工作台.md")
+if os.path.exists(workbench_file):
+    with open(workbench_file, "r") as f:
+        wb = f.read()
+    today_link = f"![[{date_str}_{weekday_en}#🎯 今日三件事]]"
+    # Find existing transclusion and replace
+    wb_new = re.sub(
+        r'!\[\[\d{4}-\d{2}-\d{2}_\w+#🎯 今日三件事\]\]',
+        today_link,
+        wb
+    )
+    if wb_new != wb:
+        with open(workbench_file, "w") as f:
+            f.write(wb_new)
+        print(f"\n✅ 工作台嵌入链接已更新为 {today_link}")
+
+# 7. High-priority items
 high_priority = [t for t in project_todos if "⏫" in t or "紧急" in t or "Deadline" in t]
 if high_priority:
     print(f"\n🔴 高优先级：")
