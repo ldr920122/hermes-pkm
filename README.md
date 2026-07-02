@@ -121,7 +121,22 @@ git clone https://github.com/ldr920122/hermes-pkm.git
 | [academic-writing](skills/academic-writing/) | 中文学术写作——论文、课题申报、基金申请 |
 | [ai-productivity-workflow](skills/ai-productivity-workflow/) | 研究 → 计划 → 执行 → 复盘的完整工作流 |
 
-更多 skills（PPT 生成、arXiv 搜索、微信读书、Markdown/HTML 转换等）见 [`skills/`](skills/) 目录。
+更多 skills（PPT 大纲、arXiv 搜索、微信读书、Markdown/HTML 转换等）见 [`skills/`](skills/) 目录。
+
+### 来源说明
+
+`skills/` 里既有我自己写的，也有社区作者的优秀作品（均保留原作者署名和许可，方便你顺藤摸瓜找到原版）：
+
+| 分类 | Skill | 作者 / 来源 |
+|------|-------|------------|
+| 原创 | academic-writing、learning-fable-writer、obsidian-dashboard-design、ai-productivity-workflow、x-article-publisher | 刘冬瑞（本仓库） |
+| 原创（基于 Hermes 原版扩展） | obsidian | 本仓库 + Hermes Agent |
+| 第三方 | llm-wiki | sdyckjq-lab · MIT |
+| 第三方 | huashu-md-html | 花叔 |
+| 第三方 | carl-weread、humanize-ppt | Carl / LearnPrompt · MIT |
+| 第三方 | arxiv、hermes-agent | Hermes Agent / Nous Research · MIT |
+
+需要 PowerPoint 文件生成能力，推荐 Anthropic 官方 [skills 仓库](https://github.com/anthropics/skills)的 pptx skill（专有许可，故不收录在本仓库）。
 
 ---
 
