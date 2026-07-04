@@ -87,7 +87,7 @@
 └── 子弹笔记/      ← 日记、待办、复盘
 ```
 
-### 2. 安装一个智能体（三选一）
+### 2. 安装一个智能体（三选一，不止这三个，我只是列举了最常用的）
 
 | 工具 | 一句话 | 安装 |
 |------|-------|------|
@@ -95,7 +95,7 @@
 | **Hermes Agent** | 多平台入口、定时任务、长期自动化 | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash` |
 | **OpenAI Codex** | 在代码仓库和本地文件里协作 | [openai.com/codex](https://openai.com/codex) |
 
-刚开始？装 **Obsidian + Claude Code** 就够了。
+刚开始？装 **Obsidian + Hermes** 就够了。
 
 ### 3. 使用本仓库的 Skills
 
